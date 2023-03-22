@@ -9,12 +9,12 @@ const PokeCard = () => {
     const { select } = useParams();
 
     useEffect(() => {
-        const getPoke = async () => {
+        const PokeApi = async () => {
             const res = await fetch(`${'https://pokeapi.co/api/v2/pokemon'}/${select}`);
             const data = await res.json();
             setPokemon(data);
         }
-        getPoke();
+        PokeApi();
     }, [select])
 
     return (
