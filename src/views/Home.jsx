@@ -1,33 +1,17 @@
-import { useEffect, useState } from "react";
-import '../stylesheets/home.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ash_img from '../img/ash_img.png';
 
 function Home() {
-    const [pokemonHome, setPokemonHome] = useState('');
-    const url = 'https://pokeapi.co/api/v2/pokemon/pikachu';
-
-    const homeImg = async () => {
-            const res = await fetch(url);
-            const data = await res.json();
-            const pikachuImg = data.sprites.other.dream_world.front_default;
-            setPokemonHome(pikachuImg);
-    }
-
-    useEffect(() => {
-        homeImg()
-    }, [])
-
     return (
-        <>
-        <div className="d-flex justify-content-center mt-5">
-            <div>
-                <h1 className="welcome-title">Bienvenido maestro pokémon</h1>
-                <div className="d-flex justify-content-center mt-5">
-                    <img src={pokemonHome} alt="pikachu" />
-                </div>
+            <div className='d-flex flex-column align-items-center mt-4'>
+                <h1 className="text-center mb-5">Bienvenido Maestro Pokémon</h1>
+                <img
+                alt="Ash_Imagen"
+                src={ash_img}
+                width="350"
+                height="650"
+                />
             </div>
-        </div>
-        </>
     )
 }
-
 export default Home;

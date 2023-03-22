@@ -1,24 +1,25 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from 'react-bootstrap/Navbar';
+import logo from '../img/pokemon_logo.png';
 import { NavLink } from "react-router-dom";
-import '../stylesheets/navbar.css'
 
-const Navbar = () => {
-    const setActive = ({ isActive }) => (isActive ? 'active' : 'inactive')
-    const pokeballImg = 'https://cdn-icons-png.flaticon.com/128/1033/1033013.png'
+const BarraNav = () => {
+    const setActive = ({ isActive }) => (isActive ? 'on' : 'off')
+    
     return (
-        <nav className="navbar navbar-light bg-dark">
-            <div className="container-fluid justify-content-around">
-                <div className="navbar-brand">
-                    <div className="img-container">
-                    <img src={pokeballImg} alt="poke-ball" />
-                    </div>
-                </div>
-                <div>
-                    <NavLink className={setActive} to='/'>Home</NavLink>
-                    <NavLink className={setActive} to='/pokemones'>Pokemons</NavLink>
-                </div>
-            </div>
-        </nav>
+      <Navbar className='d-flex justify-content-between px-5' bg="dark">
+        <img
+          alt="Logo Pokemon"
+          src={logo}
+          width="140"
+          height="50"
+        />
+        <div className='d-flex'>
+          <div className='p-4'><NavLink className={setActive} to='/'>Home</NavLink></div>
+          <div className='p-4'><NavLink className={setActive} to='/pokemones'>Pokemones</NavLink></div>
+        </div>
+      </Navbar>
     )
 }
 
-export default Navbar;
+export default BarraNav;

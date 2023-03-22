@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./views/Home";
-import Pokemones from "./views/Pokemones"
-import PokeInfo from "./views/PokeInfo";
+import PokeSelector from "./views/PokeSelector"
+import PokeCard from "./views/PokeCard";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="/pokemones" element={<Pokemones />}/>
-          <Route path="/pokemones/:pokeSelect" element={<PokeInfo />}/>
+          <Route path="/pokemones" element={<PokeSelector />}/>
+          <Route path="/pokemones/:select" element={<PokeCard />}/>
         </Routes>
       </BrowserRouter>
     </div>
